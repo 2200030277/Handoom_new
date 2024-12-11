@@ -1,0 +1,34 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Arrays" %>
+<html>
+<head>
+    <title>Handloom Ecommerce</title>
+</head>
+<body>
+    <h1>Welcome to Handloom Ecommerce</h1>
+    <h2>Our Products</h2>
+
+    <%
+        // Here, you can fetch the list of products from the database
+        // We'll simulate product data with prices for now.
+        List<String> products = Arrays.asList("Shirt", "Pant", "Saree", "Towel", "Curtain");
+        List<Double> prices = Arrays.asList(19.99, 29.99, 49.99, 14.99, 24.99); // Simulating prices
+    %>
+
+    <ul>
+        <%
+            for (int i = 0; i < products.size(); i++) {
+                String product = products.get(i);
+                double price = prices.get(i);
+        %>
+            <li><%= product %> - $<%= price %> 
+                <a href="CartServlet?product=<%= product %>&price=<%= price %>">Add to Cart</a>
+            </li>
+        <%
+            }
+        %>
+    </ul>
+    <a href="cart.jsp">Go to Cart</a>
+</body>
+</html>

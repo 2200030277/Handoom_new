@@ -1,0 +1,33 @@
+package com.handloom.servlet;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+import java.util.*;
+
+public class CartServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Get the product name from the request
+        String product = request.getParameter("product");
+
+        // Check if the cart exists in the session
+        HttpSession session = request.getSession();
+        List<String> cartItems = (List<String>) session.getAttribute("cart");
+
+        // If cart doesn't exist, create a new one
+        if (cartItems == null) {
+            cartItems = new ArrayList<>();
+        }
+
+        // Add the product to the cart
+        if (product != null) {
+            cartItems.add(product);
+        }
+
+        // Set the updated cart back into the session
+        session.setAttribute("cart", cartItems);
+
+        // Redirect back to the home page
+        response.sendRedirect("index.jsp");
+    }
+}

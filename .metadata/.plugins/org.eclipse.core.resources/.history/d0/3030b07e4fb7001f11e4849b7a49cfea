@@ -1,0 +1,27 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.handloom.models.Product" %>
+<html>
+<head>
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <%
+        List<Product> cartItems = (List<Product>) request.getAttribute("cartItems");
+        
+        if (cartItems == null || cartItems.isEmpty()) {
+    %>
+        <p>Your cart is empty.</p>
+    <%
+        } else {
+            for (Product product : cartItems) {
+    %>
+                <p>Product: <%= product.getName() %> - Price: $<%= product.getPrice() %></p>
+    <%
+            }
+        }
+    %>
+</body>
+</html>

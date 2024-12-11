@@ -1,0 +1,5 @@
+package com.handloom.util;
+
+public class DBUtil {
+
+}

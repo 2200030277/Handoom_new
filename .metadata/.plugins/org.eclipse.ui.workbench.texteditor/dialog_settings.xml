@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="true"/>
+		<list key="findhistory">
+			<item value="cartItems"/>
+			<item value="set"/>
+			<item value="checkout"/>
+			<item value="cart-list"/>
+			<item value="cart"/>
+			<item value="Home"/>
+			<item value="login"/>
+		</list>
+	</section>
+</section>
